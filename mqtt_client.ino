@@ -34,7 +34,7 @@ const char* password = "****";
 const char* serverName = "http://****:8080/api/v1/data/";
 
 // Server Mosquitto MQTT Broker
-#define MQTT_HOST IPAddress(54, 209, 171, 238)
+#define MQTT_HOST IPAddress(*, *, *, *)
 
 // Mosquitto port number
 #define MQTT_PORT 1883
