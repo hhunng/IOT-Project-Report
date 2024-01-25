@@ -26,11 +26,6 @@ from app.api.db import metadata, database, engine
 logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-temp_value = 2
-humid_value = 2
-gas_value = 2
-pressure_value = 2
-hidro_value = 2
 feature_dict = {}
 values = []
 keys = []
@@ -55,8 +50,8 @@ async def startup():
 mqtt_config = MQTTConfig(host = "********",
     port= 1883,
     keepalive = 60,
-    username="hunglp",
-    password="phihung21522115")
+    username="*",
+    password="*")
 
 mqtt = FastMQTT(
     config=mqtt_config
@@ -128,9 +123,9 @@ async def get_hidro(request: Request) -> Response:
     return templates.TemplateResponse("hidro.html", {"request": request})
 
 async def send_email(temp, humid, hidro, gas, pressure):
-    email_sender = 'phihung21522115@gmail.com'
+    email_sender = '*'
     email_password = '*********'
-    email_receiver = '21522115@gm.uit.edu.vn'
+    email_receiver = '*'
     subject = "Về việc xảy ra cháy"
     body = f"""
     #Hiện đang có cháy với nhiệt độ hiện tại là {temp},
