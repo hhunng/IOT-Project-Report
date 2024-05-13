@@ -26,18 +26,9 @@ from app.api.db import metadata, database, engine
 logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-feature_dict = {}
-values = []
-keys = []
-
 pred = None
 
 sample_df = pd.DataFrame(columns=['Temperature[C]', 'Humidity[%]', 'Raw H2', 'Raw Ethanol', 'Pressure[hPa]'])
-temp_min_max = [22, 80]
-humid_min_max = [10.74, 75.2]
-rawH2_min_max = [0.2, 5.0]
-rawEthanol_min_max = [140.0, 1024.96]
-pressure_min_max = [930.852, 939.861]
 
 application = FastAPI(openapi_url="/api/v1/casts/openapi.json", docs_url="/api/v1/casts/docs")
 templates = Jinja2Templates(directory="app/api/templates")
